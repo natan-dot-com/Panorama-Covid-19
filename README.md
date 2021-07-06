@@ -1,5 +1,5 @@
 # Panorama-Covid-19
 
-# Descrição (PT-BR)
+## Descrição (PT-BR)
 
-# Description (EN)
+## Description (EN)
