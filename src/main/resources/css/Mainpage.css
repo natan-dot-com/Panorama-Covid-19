@@ -1,0 +1,21 @@
+
+#logoBox {
+	-fx-background-image: url('../imgs/logo.png');
+	-fx-background-size: 100%;
+    -fx-background-repeat: no-repeat;
+	-fx-background-position: 50%;
+	-fx-effect: dropshadow(gaussian, #dcdcdc, 10, 0.5, 0, 0);
+}
+
+.topBar {
+    -fx-background-color:
+        linear-gradient(from 200% 100% to 0% 0%, transparent 0%, #dfdfdf 100%);
+}
+
+.body {
+    -fx-background-image: url('../imgs/Welcome.png');
+    -fx-alignment: top-center;
+    -fx-background-size: 50%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 50% 50%;
+}
