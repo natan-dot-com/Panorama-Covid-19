@@ -1,10 +1,10 @@
 from datetime import datetime
 from datetime import timedelta
 
-class newsInstance:
+class NewsInstance:
     ID = -1
 
-    def __init__(self, newsTitle, newsURL, newsSubtitle, newsDate, newsSource):
+    def __init__(self, newsTitle: str, newsURL: str, newsSubtitle: str, newsDate: datetime, newsSource: str):
         self.newsTitle = newsTitle
         self.newsURL = newsURL
         self.newsSubtitle = newsSubtitle
@@ -12,26 +12,26 @@ class newsInstance:
         self.newsSource = newsSource
         self.dataAdded = datetime.now()
 
-    def getNewsID(self):
+    def getNewsID(self) -> int:
         return self.ID
 
-    def getNewsTitle(self):
+    def getNewsTitle(self) -> str:
         return self.newsTitle
 
-    def getNewsURL(self):
+    def getNewsURL(self) -> str:
         return self.newsURL
 
-    def getNewsSubtitle(self):
+    def getNewsSubtitle(self) -> str:
         return self.newsSubtitle
 
-    def getNewsDate(self):
+    def getNewsDate(self) -> datetime:
         return self.newsDate
 
-    def getNewsSource(self):
+    def getNewsSource(self) -> str:
         return self.newsSource
 
-    def getNewsDataAdded(self):
+    def getNewsDataAdded(self) -> datetime:
         return self.dataAdded
 
-    def isExpired(self):
+    def isExpired(self) -> bool:
         return datetime.now() > self.dataAdded + timedelta(days=7)
