@@ -1,4 +1,4 @@
-class newsSource:
+class NewsSource:
     ID = -1
     
     def __init__(self, portalName, mainURL, searchURL):

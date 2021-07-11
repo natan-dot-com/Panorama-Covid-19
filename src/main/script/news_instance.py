@@ -33,5 +33,13 @@ class NewsInstance:
     def getNewsDataAdded(self) -> datetime:
         return self.dataAdded
 
+    def printInstance(self) -> None:
+        print("Titulo da noticia: " + self.newsTitle)
+        print("URL da noticia: " + self.newsURL)
+        print("Subtitulo da noticia: " + self.newsSubtitle)
+        print("Data da noticia: " + self.newsDate.strftime("%d/%m/%y"))
+        print("Data adicionado: " + self.dataAdded.strftime("%d/%m/%y"))
+        print("-")
+
     def isExpired(self) -> bool:
         return datetime.now() > self.dataAdded + timedelta(days=7)
