@@ -1,6 +1,6 @@
 import sqlite3
 from news_instance import NewsInstance
-from news_source import newsSource
+from news_source import NewsSource
 
 
 class newsFeedDatabase:
@@ -45,7 +45,7 @@ class newsFeedDatabase:
 		);
 		''')
 	
-	def insertOnSource(self, source : newsSource) -> None:
+	def insertOnSource(self, source : NewsSource) -> None:	
 		name = source.getPortalName()
 		mainURL = source.getMainURL()
 		searchURL = source.getSearchURL()
@@ -57,7 +57,7 @@ class newsFeedDatabase:
 	def insertOnNews(self, source: NewsInstance) -> None:
 		title = source.getNewsTitle()
 		subtitle = source.getNewsSubtitle()
-		newsDate = source.getNewsDate()
+		newsDate = source.getNewsDate().isoformat()
 		url = source.getNewsURL()
 		dataAdded = source.getNewsDataAdded().isoformat()
 		nameSource = source.getNewsSource().getPortalName()
@@ -77,3 +77,9 @@ class newsFeedDatabase:
 	def query(self, query : str) -> list:
 		self.cursor.execute(query)
 		return self.cursor.fetchall()
+
+
+if __name__ == "__main__":
+	with newsFeedDatabase() as db:
+		db.create_table()
+		print(db.query())

@@ -54,7 +54,7 @@ def UOL() -> Iterable[NewsInstance]:
             try:
                 newsTitle = news.find("h3").text.rstrip()
                 newsURL = news.a['href'].rstrip()
-                newsSubtitle = ""
+                newsSubtitle = "NULL"
             except KeyError:
                 continue
 
