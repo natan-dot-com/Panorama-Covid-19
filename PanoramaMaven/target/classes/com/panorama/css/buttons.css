@@ -1,0 +1,35 @@
+.buttons {
+	-fx-background-color: #80e29d;
+	-fx-background-position: 50%;
+	-fx-text-fill: #4e656e;
+}
+
+.buttons .label {
+    -fx-text-fill: #4e656e;
+}
+
+.buttons:selected .label {
+	-fx-text-fill: white;
+}
+
+.buttons:hover .label {
+	-fx-text-fill: white;
+}
+
+.buttons:selected {
+	-fx-background-color: #617881;
+	-fx-text-fill: white;
+}
+
+.buttons:hover {
+    -fx-background-color: #617881;
+    -fx-text-fill: white;
+}
+
+#logoButton {
+    -fx-background-color: transparent;
+    -fx-background-image: url('../imgs/logo.png');
+    -fx-background-size: 125%;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
