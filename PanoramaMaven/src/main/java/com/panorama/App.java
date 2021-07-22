@@ -1,5 +1,6 @@
 package com.panorama;
 
+import com.panorama.exceptions.SceneException;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
@@ -60,9 +61,13 @@ public class App extends Application {
         scene.setRoot(loadFXML(fxml));
     }
 
-    public static Parent loadFXML(String fxml) throws IOException {
+    public static Parent loadFXML(String fxml) throws SceneException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("fxml/" + fxml + ".fxml"));
-        return fxmlLoader.load();
+        try {
+            return fxmlLoader.load();
+        } catch (IOException e) {
+            throw new SceneException(SceneException.IRREGULAR_FXML);
+        }
     }
 
     public static void main(String[] args) {

@@ -1,0 +1,13 @@
+com\panorama\setup\DashboardSetup.class
+com\panorama\exceptions\SceneException.class
+com\panorama\controllers\SecondaryController.class
+com\panorama\setup\MainpageSetup.class
+com\panorama\setup\DashboardSetup$1.class
+com\panorama\controllers\MaskController.class
+com\panorama\controllers\AboutUsController.class
+com\panorama\App$1.class
+module-info.class
+com\panorama\App.class
+com\panorama\controllers\DashboardController.class
+com\panorama\controllers\MainpageController.class
+com\panorama\setup\DashboardSetup$2.class
