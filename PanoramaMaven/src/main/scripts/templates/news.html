@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<h1>
+			Noticias:
+		</h1>
+    <form action="." method="POST">
+      <button type="submit">RELOAD</button>
+    </form>
+		{% for news in newsList %}
+		<p>
+    <a href={{news[1]}}>{{news[0]}}</a><br>
+    {% if news[2] != "NULL" %}
+      {{news[2]}}<br>
+    {% endif %}
+    Fonte: {{news[4]}}
+		</p>
+		{% endfor %}
+	</body>
+</html>
