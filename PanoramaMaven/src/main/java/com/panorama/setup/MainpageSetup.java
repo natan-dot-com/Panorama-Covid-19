@@ -20,7 +20,7 @@ import java.util.Objects;
  * @author Álvaro José Lopes
  */
 
-public class MainpageSetup {
+public class MainpageSetup implements Setup {
     private static final int MIN_HEIGHT = 720;
     private static final int MIN_WIDTH = 1280;
 
@@ -69,5 +69,10 @@ public class MainpageSetup {
         box.setPrefHeight(prefHeight);
         box.setPrefWidth(prefWidth);
         box.setStyle(style);
+    }
+
+    @Override
+    public void starter(String osName, String absolutePathCompiler, String absolutePathScript) {
+
     }
 }

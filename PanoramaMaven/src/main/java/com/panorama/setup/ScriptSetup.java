@@ -11,7 +11,7 @@ import java.util.HashMap;
  * @author Álvaro José Lopes
  */
 
-public class ScriptSetup {
+public class ScriptSetup implements Setup {
     private static Process whenVaccinated, stats, news;
     private static final HashMap<String, Process> scriptLocations =
             new HashMap<String, Process>() {{
@@ -35,6 +35,11 @@ public class ScriptSetup {
     }
 
     public static void runAllLocalServices() {
+
+    }
+
+    @Override
+    public void starter(String osName, String absolutePathCompiler, String absolutePathScript) {
 
     }
 }
