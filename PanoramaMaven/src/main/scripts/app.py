@@ -17,11 +17,10 @@ def getvalue():
 			pni = request.form['pni']
 			print(age, estado, pni)
 
-			x = VaccineEstimator(age, estado, pni)
-			x.estimate()
-			official = str(x.getOfficialEstimation())
-			unofficial = str(x.getUnofficialEstimation())
-			print(official, unofficial)
+			estimation = VaccineEstimator(age, estado, pni)
+			estimation.estimate()
+			official = str(estimation.getOfficialEstimation())
+			unofficial = str(estimation.getUnofficialEstimation())
 
 			return render_template("./estimativa.html", official=official, unofficial=unofficial)
 	except:

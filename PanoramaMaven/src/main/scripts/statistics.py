@@ -52,7 +52,6 @@ app = Flask(__name__, template_folder='../resources/com/panorama/html')
 def index():
 	# TOTAL corresponde ao dados totais do brasil
 	data = statistic.getDataFromState('TOTAL')
-	print(data) 
 	return render_template('./statistics.html', state = 'TOTAL', statistic=data)
 
 

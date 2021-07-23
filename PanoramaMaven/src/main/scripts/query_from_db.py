@@ -8,11 +8,11 @@ from random import shuffle
 app = Flask(__name__, template_folder='../resources/com/panorama/html')
 
 QUERY = '''SELECT News.title, News.url, News.subtitle, News.newsDate, Source.name
-                 FROM News
-                 JOIN Source ON News.source_id == Source.id 
-                 WHERE %s == News.source_id
-                 ORDER BY dataAdded DESC
-                 LIMIT 4;'''
+                FROM News
+                JOIN Source ON News.source_id == Source.id 
+                WHERE %s == News.source_id
+                ORDER BY dataAdded DESC
+                LIMIT 4;'''
 
 def reloadDB():
     newsList = []
@@ -33,12 +33,11 @@ def reloadDB():
     return newsList
 
 @app.route('/', methods=["POST"])
-def mainPage():
-    newsList = reloadDB()
-    return render_template("./news.html", newsList=newsList)
+def reload():
+    return mainPage()
 
 @app.route('/')
-def main():
+def mainPage():
     newsList = reloadDB()
     return render_template("./news.html", newsList=newsList)
 
