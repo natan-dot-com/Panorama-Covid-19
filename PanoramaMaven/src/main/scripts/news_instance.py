@@ -12,6 +12,15 @@ class NewsInstance:
         self.newsSource = newsSource
         self.dataAdded = datetime.now()
 
+    def __str__(self) -> str:
+        resultString = "Titulo da noticia: " + self.newsTitle + \
+        "URL da noticia: " + self.newsURL + \
+        "Subtitulo da noticia: " + self.newsSubtitle + \
+        "Data da noticia: " + self.newsDate.strftime("%d/%m/%y") + \
+        "Data adicionado: " + self.dataAdded.strftime("%d/%m/%y") + \
+        "-"
+        return resultString
+
     def getNewsID(self) -> int:
         return self.ID
 
@@ -32,14 +41,6 @@ class NewsInstance:
 
     def getNewsDataAdded(self) -> datetime:
         return self.dataAdded
-
-    def printInstance(self) -> None:
-        print("Titulo da noticia: " + self.newsTitle)
-        print("URL da noticia: " + self.newsURL)
-        print("Subtitulo da noticia: " + self.newsSubtitle)
-        print("Data da noticia: " + self.newsDate.strftime("%d/%m/%y"))
-        print("Data adicionado: " + self.dataAdded.strftime("%d/%m/%y"))
-        print("-")
 
     def isExpired(self) -> bool:
         return datetime.now() > self.dataAdded + timedelta(days=7)
