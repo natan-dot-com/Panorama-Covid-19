@@ -3,7 +3,7 @@
 ## Descrição (PT-BR)
 
 ## Description (EN)
-Panorama Covid is an app mainly made in Java and Python, which it's main purpose is to inform and educate people about the SarS-CoV-2 (also known as COVID-19) ongoing pandemic. It´s the final project of the Object Oriented Programming Class of University of São Paulo - Brazil (USP).
+Panorama Covid is an app mainly made in Java and Python, which it's main purpose is to inform and educate people about the SarS-CoV-2 (also known as COVID-19) ongoing pandemic. It's also the final project of the Object Oriented Programming Class of University of São Paulo - Brazil (ICMC-USP).
 
 ### Structure
 The app has a main dashboard, that has three main sections:
