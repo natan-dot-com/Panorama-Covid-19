@@ -48,7 +48,9 @@ public class MainpageController implements Initializable {
      * Função que lida com o comportamento do botão que troca e carrega as cenas.
      * @param button Botão do estilo Toggle que possui o comportamento esperado na aplicação.
      * @param fxmlFile Nome do arquivo FXML sem o identificador de formatação para o carregamento da cena.
+     * @throws SceneException Exceção específica para quando o .fxml não é carregado corretamente.
      */
+
     private void handleButton(ToggleButton button, String fxmlFile) throws SceneException {
         if (lastButton == button) {
             lastButton.setSelected(true);
@@ -68,6 +70,7 @@ public class MainpageController implements Initializable {
      * Função para trocar a cena do painel principal para o Dashboard.
      * @param event Evento de input do usuário.
      */
+
     @FXML
     public void changeToDashboard(InputEvent event) {
         if (event instanceof MouseEvent) {
@@ -83,6 +86,7 @@ public class MainpageController implements Initializable {
      * Função para trocar a cena do painel principal para o Dashboard.
      * @param event Evento de input do usuário.
      */
+
     @FXML
     public void changeToMask(InputEvent event) {
         if (event instanceof MouseEvent) {
@@ -98,6 +102,7 @@ public class MainpageController implements Initializable {
      * Função para trocar a cena do painel principal para o Sobre Nós.
      * @param event Evento de input do usuário.
      */
+
     @FXML
     public void changeToAboutUs(InputEvent event) {
         if (event instanceof MouseEvent) {
@@ -114,6 +119,7 @@ public class MainpageController implements Initializable {
      * @param url Endereço URL padrão do Java.
      * @param resourceBundle Pacote de recursos padrão do Java.
      */
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         MainpageSetup.setupHBOX(

@@ -9,6 +9,14 @@ import javafx.scene.web.WebView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Classe que no contexto do M.V.C faz o papel de controlador da cena About Us do aplicativo.
+ * @author Paulo Henrique de Souza Soares
+ * @author Natan Henrique Sanches
+ * @author Osni Brito
+ * @author Álvaro José Lopes
+ */
+
 public class AboutUsController implements Initializable {
     @FXML
     public WebView maskViewer;
