@@ -1,6 +1,7 @@
 package com.panorama.controllers;
 
 import com.panorama.App;
+import com.panorama.setup.DashboardSetup;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.web.WebEngine;
@@ -23,6 +24,12 @@ public class AboutUsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        DashboardSetup.setupWebView(
+            maskViewer,
+            600.0,
+            1024.0
+        );
+
         WebEngine engine = maskViewer.getEngine();
         engine.load(App.class.getResource("html/aboutUs.html").toString());
     }
