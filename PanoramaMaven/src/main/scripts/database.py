@@ -80,3 +80,16 @@ class newsFeedDatabase:
 
 	def commit(self) -> None:
 		self.connection.commit()
+
+	def getSourceIDs(self) -> list:
+		query = self.query('SELECT id FROM Source')
+		return [id[0] for id in query]
+
+	def removeOldest(self, threshold:str) -> None:
+		query = '''DELETE FROM News WHERE id IN (
+				   SELECT id FROM News 
+				   WHERE dataAdded <= datetime('now','%s','localtime')
+				   );
+				'''
+		self.cursor.execute(query % (threshold))
+

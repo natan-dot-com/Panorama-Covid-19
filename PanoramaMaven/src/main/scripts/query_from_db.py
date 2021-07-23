@@ -7,32 +7,30 @@ from random import shuffle
 
 app = Flask(__name__, template_folder='../resources/com/panorama/html')
 
-FIRST_QUERY = '''SELECT News.title, News.url, News.subtitle, News.newsDate, Source.name
+QUERY = '''SELECT News.title, News.url, News.subtitle, News.newsDate, Source.name
                  FROM News
                  JOIN Source ON News.source_id == Source.id 
-                 WHERE 1 == News.source_id
+                 WHERE %s == News.source_id
                  ORDER BY dataAdded DESC
                  LIMIT 4;'''
 
-SECOND_QUERY = '''SELECT News.title, News.url, News.subtitle, News.newsDate, Source.name
-                  FROM News
-                  JOIN Source ON News.source_id == Source.id 
-                  WHERE 10 == News.source_id
-                  ORDER BY dataAdded DESC
-                  LIMIT 4;'''
-
 def reloadDB():
+    newsList = []
     with newsFeedDatabase() as currFeed:
         currFeed.create_table()
         for news in CNN():
             currFeed.insertON(news)
         for news in UOL():
             currFeed.insertON(news)
-        cnnRecentNews = currFeed.query(FIRST_QUERY)
-        uolRecentNews = currFeed.query(SECOND_QUERY)
-        newsList = cnnRecentNews + uolRecentNews
-        shuffle(newsList)
-        return newsList
+
+        sourceIDs = currFeed.getSourceIDs()
+        for id in sourceIDs:
+            newsList += currFeed.query(QUERY % (id))
+
+        currFeed.removeOldest('-7 day')
+
+    shuffle(newsList)
+    return newsList
 
 @app.route('/', methods=["POST"])
 def mainPage():
