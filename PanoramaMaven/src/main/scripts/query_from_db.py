@@ -5,7 +5,7 @@ from news_source import NewsSource
 from news_instance import NewsInstance
 from random import shuffle
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../resources/com/panorama/html')
 
 FIRST_QUERY = '''SELECT News.title, News.url, News.subtitle, News.newsDate, Source.name
                  FROM News
@@ -45,4 +45,4 @@ def main():
     return render_template("./news.html", newsList=newsList)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5002)
