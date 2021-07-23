@@ -1,0 +1,2 @@
+JAVA_VERSION="15"
+MODULES="java.base java.datatransfer java.xml java.prefs java.desktop javafx.base jdk.unsupported javafx.graphics javafx.controls java.scripting javafx.fxml javafx.media jdk.jsobject jdk.xml.dom javafx.web jdk.crypto.ec jdk.crypto.cryptoki com.panorama"

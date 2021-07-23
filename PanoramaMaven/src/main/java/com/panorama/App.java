@@ -1,6 +1,7 @@
 package com.panorama;
 
 import com.panorama.exceptions.SceneException;
+import com.panorama.setup.MainpageSetup;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
@@ -17,8 +18,13 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- * JavaFX App
+ * Classe principal do aplicativo, que possui o nó Parent da aplicação e a função main.
+ * @author Paulo Henrique de Souza Soares
+ * @author Natan Henrique Sanches
+ * @author Osni Brito
+ * @author Álvaro José Lopes
  */
+
 public class App extends Application {
     private static Dimension screenSize;
     private static Scene scene;
@@ -40,21 +46,13 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("mainpage"), screenSize.getWidth()-100, screenSize.getHeight()-100, true, SceneAntialiasing.BALANCED);
-        stage.setTitle("Panorama COVID-19");
-        stage.setMinWidth(1280);
-        stage.setMinHeight(720);
-        stage.setScene(scene);
-        stage.getIcons().add(
-            new Image(Objects.requireNonNull(App.class.getResourceAsStream("imgs/app-icon.png")))
+        MainpageSetup.stageSetup(
+            stage,
+            "Panorama COVID-19",
+            1280,
+            720,
+            scene
         );
-        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            @Override
-            public void handle(WindowEvent t) {
-                Platform.exit();
-                System.exit(0);
-            }
-        });
-        stage.show();
     }
 
     public static void setRoot(String fxml) throws IOException {
