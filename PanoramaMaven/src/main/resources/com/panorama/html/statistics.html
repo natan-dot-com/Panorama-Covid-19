@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<h1>
+			Estatísticas COVID {{state}}:
+		</h1>
+		{% for feature, value in statistic.items() %}
+		<p>
+			{{feature}} : {{value}}
+		</p>
+		{% endfor %}
+	</body>
+</html>
