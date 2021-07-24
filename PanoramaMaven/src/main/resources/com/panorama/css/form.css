@@ -38,7 +38,7 @@
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background: #b86f52;
+    background: #4aa769;
     width: 100%;
     border: 0;
     padding: 15px;
@@ -53,7 +53,7 @@
 .form button:hover,
 .form button:active,
 .form button:focus {
-    background: #a06043;
+    background: #80e29d;
 }
 
 .form .message {
@@ -63,7 +63,7 @@
 }
 
 .form .message a {
-    color: #af6b4c;
+    color: #57ac70;
     text-decoration: none;
 }
 
@@ -113,7 +113,7 @@
 }
 
 body {
-    background: #b88952; /* fallback for old browsers */
+    background: #80e29d; /* fallback for old browsers */
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
