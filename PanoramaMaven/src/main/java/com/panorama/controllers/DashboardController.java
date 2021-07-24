@@ -52,9 +52,9 @@ public class DashboardController implements Initializable {
         vaccineEngine.load("http://127.0.0.1:5000/");
 
         statsEngine = statsView.getEngine();
-        statsEngine.load("https://www.google.com/");
+        statsEngine.load("http://127.0.0.1:5001/");
 
         newsEngine = newsView.getEngine();
-        newsEngine.load(App.class.getResource("html/masks.html").toString());
+        newsEngine.load("http://127.0.0.1:5002/");
     }
 }

@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from vaccine_estimator import VaccineEstimator
 
-app = Flask(__name__, template_folder='../resources/com/panorama/html')
+app = Flask(__name__, template_folder='../resources/com/panorama/html', static_folder='../resources/com/panorama/css')
 
 @app.route('/')
 def index():
