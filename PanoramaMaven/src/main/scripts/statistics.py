@@ -46,7 +46,7 @@ class Statistics:
 
 # Flask App
 statistic = Statistics()
-app = Flask(__name__, template_folder='../resources/com/panorama/html')
+app = Flask(__name__)
 
 @app.route('/')
 def index():

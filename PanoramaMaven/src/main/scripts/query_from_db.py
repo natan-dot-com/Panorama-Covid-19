@@ -5,7 +5,7 @@ from news_source import NewsSource
 from news_instance import NewsInstance
 from random import shuffle
 
-app = Flask(__name__, template_folder='../resources/com/panorama/html')
+app = Flask(__name__)
 
 QUERY = '''SELECT News.title, News.url, News.subtitle, News.newsDate, Source.name
                 FROM News
