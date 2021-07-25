@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -11,9 +12,10 @@
         body {
             margin-left: 25%;
             margin-right: 25%;
+            background-color: rgb(200, 200, 200);
         }
         .newsBox {
-            background-color: rgba(212, 212, 212, 0.7);
+            background-color: rgb(255, 255, 255);
             margin-left: 0%;
             padding-left: 8pt;
             padding-right: 8pt;
@@ -45,6 +47,7 @@
         }
 
         .reload-button {
+            margin-top: 7.5%;
             height: 32pt;
             width: 100%;
             outline: 0;
@@ -89,7 +92,7 @@
                 method="POST"
                 type="submit"
             >
-                <text class="material-icons"> refresh </text>
+                <i class="material-icons"> &#xE5D5 </i>
             </button>
         </form>
         {% for news in newsList %}

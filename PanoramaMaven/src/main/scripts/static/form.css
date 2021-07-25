@@ -2,7 +2,7 @@
 
 .login-page {
     width: 360px;
-    padding: 8% 0 0;
+    padding: 2vh 0 0 0;
     margin: auto;
 }
 
@@ -113,7 +113,7 @@
 }
 
 body {
-    background: #80e29d; /* fallback for old browsers */
+    background-color: rgb(200, 200, 200);
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -126,9 +126,7 @@ select {
     width: 100%;
     height: 5%;
     margin: 0 auto;
-    background-color: #ffffff;
     outline: 0;
-    background: #f2f2f2;
     border: 0;
     margin: 0 0 15px;
     box-sizing: border-box;

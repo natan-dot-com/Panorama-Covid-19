@@ -98,6 +98,6 @@ class Estimation:
 
 	def __str__(self) -> str:
 		if len(self.link) > 0:
-			return self.prompt + '<br>' + ' link: ' + self.link + '\n'
+			return self.prompt + '\n' + self.link + '\n'
 		else:
 			return self.prompt + '\n'
