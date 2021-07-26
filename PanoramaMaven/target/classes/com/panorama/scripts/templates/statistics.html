@@ -1,42 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <meta charset="UTF-8" />
+    <meta
+        name="viewport"
+        content="initial-scale=1.0; maximum-scale=1.0; width=device-width;"
+    />
     <style>
-        @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
         body {
             font-family: "Roboto", sans-serif;
-            margin-left: 10%;
-            margin-right: 25%;
             background-color: rgb(200, 200, 200);
+            margin-right: 5%;
+            margin-left: 5%;
         }
 
-        .title {
-            height: 50pt;
-            text-align: center;
-            background: rgb(168, 168, 168);
+        table {
+            background: rgb(200, 200, 200);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
         }
 
-        .data {
-            height: 50pt;
+        .title * {
+            border-radius: 3px;
             text-align: center;
+            color: #2f444b;
+            background: #92ffb3;
+            text-transform: uppercase;
+        }
+
+        .title h5 {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        .data * {
+            border-radius: 3px;
+            font-size: 10pt;
+            text-align: center;
+            color: #2f444b;
+            font-weight: bolder;
             background: rgb(218, 218, 218);
+        }
+
+        .date {
+            color: #2f444b;
+            font-family: "Roboto", sans-serif;
+            text-align: left;
         }
     </style>
     <body>
-        <h3>{{statistic['date']}}</h3>
-        <table style="width: 100%">
+        <h3 class="date">
+            Dados atualizados diariamente - {{statistic['date']}}
+        </h3>
+        <table>
             <tr class="title">
-                <td><h3>Casos totais</h3></td>
-                <td><h3>Mortes por casos</h3></td>
-                <td><h3>Vacinados</h3></td>
-                <td><h3>Vacinados 1ª dose</h3></td>
-                <td><h3>Vacinados 2ª dose</h3></td>
+                <th scope="col"><h5>Mortes</h5></th>
+                <th scope="col"><h5>Casos totais</h5></th>
+                <th scope="col"><h5>Mortes por casos</h5></th>
+                <th scope="col"><h5>Imunizados</h5></th>
+                <th scope="col"><h5>Vacinados 1ª dose</h5></th>
+                <th scope="col"><h5>Vacinados 2ª dose</h5></th>
             </tr>
             <tr class="data">
+                <td>{{statistic['deaths']}}</td>
                 <td>{{statistic['totalCases']}}</td>
                 <td>{{statistic['deaths_by_totalCases']}}</td>
-                <td>{{statistic['vaccinated']}}</td>
+                <td>{{statistic['fully_immunized']}}</td>
                 <td>{{statistic['vaccinated_single']}}</td>
                 <td>{{statistic['vaccinated_second']}}</td>
             </tr>
