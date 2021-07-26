@@ -42,7 +42,7 @@
                 <version>0.0.4</version>
                 <configuration>
                     <mainClass>com.panorama.App</mainClass>
-                    <launcher>launch.exe</launcher>
+                    <launcher>panorama-covid</launcher>
                     <compress>2</compress>
                     <jlinkZipName>panorama-covid</jlinkZipName>
                     <jlinkImageName>panorama-covid</jlinkImageName>

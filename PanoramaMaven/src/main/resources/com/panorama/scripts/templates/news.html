@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+    />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+        body {
+            margin-left: 25%;
+            margin-right: 25%;
+            background-color: rgb(200, 200, 200);
+        }
+        .newsBox {
+            background-color: rgb(255, 255, 255);
+            margin-left: 0%;
+            padding-left: 8pt;
+            padding-right: 8pt;
+            padding-bottom: 8pt;
+            border-radius: 8pt;
+        }
+
+        .newsBox p {
+            font-family: Roboto, sans-serif;
+            text-align: left;
+            position: relative;
+            max-width: 100%;
+        }
+
+        .newsBox button {
+            width: 100%;
+            height: 24pt;
+            font-family: "Roboto", sans-serif;
+            text-transform: uppercase;
+            outline: 0;
+            background: #52a0b8;
+            border: 0;
+            color: #ffffff;
+            font-size: 14px;
+            -webkit-transition: all 0.3 ease;
+            transition: all 0.3 ease;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .reload-button {
+            margin-top: 7.5%;
+            height: 32pt;
+            width: 100%;
+            outline: 0;
+            border: 0;
+            background: #ffec7d;
+            color: #797979;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            box-shadow: inset 0 0 0 100px #1414141a;
+        }
+
+        .fonte {
+            /* background-color: rgb(169, 255, 183); */
+            color: #456d80;
+            padding-top: 8pt;
+            text-align: right;
+            font-family: "Roboto", sans-serif;
+            font-weight: 800;
+        }
+
+        .titulo {
+            /* background-color: rgb(169, 169, 255); */
+            color: #2c2c2c;
+            font-weight: bold;
+        }
+
+        .manchete {
+            /* background-color: rgb(255, 197, 197); */
+            color: #696969;
+            padding-bottom: 8pt;
+        }
+    </style>
+    <body>
+        <form>
+            <button
+                class="reload-button"
+                action="."
+                method="POST"
+                type="submit"
+            >
+                <i class="material-icons"> &#xE5D5 </i>
+            </button>
+        </form>
+        {% for news in newsList %}
+        <div class="newsBox">
+            <p class="fonte">{{news[4]}}</p>
+            <p class="titulo">{{news[0]}}<br /></p>
+            {% if news[2] != "NULL" %}
+            <p class="manchete">{{news[2]}}<br /></p>
+            {% endif %}
+            <a href="https://outline.com/{{news[1]}}">
+                <button>LER NOTÍCIA</button>
+            </a>
+        </div>
+
+        {% endfor %}
+    </body>
+</html>

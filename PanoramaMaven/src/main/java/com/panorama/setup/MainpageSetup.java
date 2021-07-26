@@ -1,6 +1,7 @@
 package com.panorama.setup;
 
 import com.panorama.App;
+import com.panorama.ScriptSetup;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -20,7 +21,7 @@ import java.util.Objects;
  * @author Álvaro José Lopes
  */
 
-public class MainpageSetup implements Setup {
+public class MainpageSetup {
     private static final int MIN_HEIGHT = 720;
     private static final int MIN_WIDTH = 1280;
 
@@ -53,6 +54,10 @@ public class MainpageSetup implements Setup {
             @Override
             public void handle(WindowEvent t) {
                 Platform.exit();
+                // Fechar os scripts quando sair do programa.
+                ScriptSetup.process.destroy();
+                ScriptSetup.process2.destroy();
+                ScriptSetup.process3.destroy();
                 System.exit(0);
             }
         });
@@ -69,10 +74,5 @@ public class MainpageSetup implements Setup {
         box.setPrefHeight(prefHeight);
         box.setPrefWidth(prefWidth);
         box.setStyle(style);
-    }
-
-    @Override
-    public void starter(String osName, String absolutePathCompiler, String absolutePathScript) {
-
     }
 }

@@ -12,4 +12,5 @@ module com.panorama {
     exports com.panorama.exceptions;
 
     opens com.panorama.controllers to javafx.fxml;
+    opens com.panorama.scripts to javafx.fxml;
 }

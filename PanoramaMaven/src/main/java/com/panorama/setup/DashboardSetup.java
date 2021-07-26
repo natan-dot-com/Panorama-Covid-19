@@ -16,7 +16,7 @@ import java.util.Set;
  * @author Álvaro José Lopes
  */
 
-public class DashboardSetup implements Setup {
+public class DashboardSetup {
 
     /**
      * Faz a tarefa de esconder a scrollbar nas páginas desejadas.
@@ -60,10 +60,5 @@ public class DashboardSetup implements Setup {
         });
 
         hideScrollBar(view);
-    }
-
-    @Override
-    public void starter(String osName, String absolutePathCompiler, String absolutePathScript) {
-
     }
 }

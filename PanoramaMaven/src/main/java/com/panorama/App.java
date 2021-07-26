@@ -43,6 +43,8 @@ public class App extends Application {
         icons = Font.loadFont(
             App.class.getResourceAsStream("fonts/Icons.ttf"), 17.5
         );
+
+        ScriptSetup.runAllLocalServices();
     }
 
     /**
