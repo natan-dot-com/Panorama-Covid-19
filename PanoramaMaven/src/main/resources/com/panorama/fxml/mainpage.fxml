@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -11,14 +13,25 @@
 
 <BorderPane fx:id="mainPane" minHeight="720.0" minWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.panorama.controllers.MainpageController">
    <center>
-      <AnchorPane />
+      <AnchorPane>
+         <children>
+            <AnchorPane prefHeight="626.0" prefWidth="1327.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="585.0" fitWidth="1327.0" layoutX="144.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="144.0" AnchorPane.rightAnchor="143.0" AnchorPane.topAnchor="21.0">
+                     <image>
+                        <Image url="@../imgs/Welcome.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
    </center>
    <top>
       <HBox fx:id="horizontalBox" prefHeight="135.0" prefWidth="1280.0" style="-fx-background-color: #dee5ea;" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane prefHeight="140.0" prefWidth="376.0">
                <children>
-                  <ToggleButton id="logoButton" fx:id="homeButton" layoutX="62.0" layoutY="20.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="253.0" stylesheets="@../css/buttons.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="61.0" AnchorPane.topAnchor="20.0" />
+                  <ToggleButton id="logoButton" fx:id="homeButton" layoutX="62.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#changeToHome" prefHeight="100.0" prefWidth="253.0" stylesheets="@../css/buttons.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="61.0" AnchorPane.topAnchor="20.0" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="140.0" prefWidth="447.0">

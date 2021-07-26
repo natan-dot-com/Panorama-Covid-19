@@ -5,6 +5,7 @@ import java.net.URL;
 
 /**
  * Classe para gerenciar a chamada e finalização de scripts no aplicativo.
+ * OBS: USADA NO MODO DESENVOLVIMENTO.
  * @author Paulo Henrique de Souza Soares
  * @author Natan Henrique Sanches
  * @author Osni Brito
@@ -24,8 +25,11 @@ public class ScriptSetup {
         "py " + stats.getAbsolutePath()
     };
 
-    public static void runAllLocalServices() {
+    /**
+     * Função para rodar os scripts [MODO DESENVOLVIMENTO]
+     */
 
+    public static void runAllLocalServices() {
         try {
             vaccineProcess = Runtime.getRuntime().exec(scriptNames[0]);
             newsProcess = Runtime.getRuntime().exec(scriptNames[1]);

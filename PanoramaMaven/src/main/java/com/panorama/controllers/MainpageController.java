@@ -115,6 +115,22 @@ public class MainpageController implements Initializable {
     }
 
     /**
+     * Função para trocar a cena do painel principal para a homepage.
+     * @param event Evento de input do usuário.
+     */
+
+    @FXML
+    public void changeToHome(InputEvent event) {
+        if (event instanceof MouseEvent) {
+            try {
+                handleButton(aboutUsButton, "home");
+            } catch (SceneException e) {
+                System.exit(1);
+            }
+        }
+    }
+
+    /**
      * Função padrão da classe Initializable, que executa essa função antes de qualquer outra.
      * @param url Endereço URL padrão do Java.
      * @param resourceBundle Pacote de recursos padrão do Java.
