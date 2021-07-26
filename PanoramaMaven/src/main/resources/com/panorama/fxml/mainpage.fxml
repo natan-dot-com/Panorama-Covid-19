@@ -14,7 +14,7 @@
       <AnchorPane />
    </center>
    <top>
-      <HBox fx:id="horizontalBox" prefHeight="140.0" prefWidth="1280.0" style="-fx-background-color: #dee5ea;" BorderPane.alignment="CENTER">
+      <HBox fx:id="horizontalBox" prefHeight="135.0" prefWidth="1280.0" style="-fx-background-color: #dee5ea;" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane prefHeight="140.0" prefWidth="376.0">
                <children>

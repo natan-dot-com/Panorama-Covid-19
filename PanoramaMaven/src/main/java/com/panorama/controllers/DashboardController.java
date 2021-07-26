@@ -1,9 +1,13 @@
 package com.panorama.controllers;
 
 import com.panorama.App;
+import com.panorama.exceptions.SceneException;
 import com.panorama.setup.DashboardSetup;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.input.InputEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import java.net.URL;
@@ -25,8 +29,17 @@ public class DashboardController implements Initializable {
     public WebView statsView;
     @FXML
     public WebView newsView;
+    @FXML
+    public Button returnToListButton;
 
-    private WebEngine vaccineEngine, statsEngine, newsEngine;
+    private static WebEngine vaccineEngine, statsEngine, newsEngine;
+
+    @FXML
+    public void returnToList(InputEvent event) {
+        if (event instanceof MouseEvent) {
+            newsEngine.load("http://127.0.0.1:5002/");
+        }
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -56,5 +69,7 @@ public class DashboardController implements Initializable {
 
         newsEngine = newsView.getEngine();
         newsEngine.load("http://127.0.0.1:5002/");
+
+        returnToListButton.setFont(App.font);
     }
 }

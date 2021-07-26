@@ -2,16 +2,45 @@
 <html lang="pt-br">
     <meta charset="UTF-8" />
     <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
         body {
+            font-family: "Roboto", sans-serif;
             margin-left: 10%;
             margin-right: 25%;
             background-color: rgb(200, 200, 200);
         }
+
+        .title {
+            height: 50pt;
+            text-align: center;
+            background: rgb(168, 168, 168);
+        }
+
+        .data {
+            height: 50pt;
+            text-align: center;
+            background: rgb(218, 218, 218);
+        }
     </style>
     <body>
-        <h1>Estatísticas COVID {{state}}:</h1>
-        {% for feature, value in statistic.items() %}
-        <p>{{feature}} : {{value}}</p>
-        {% endfor %}
+        <h3>{{statistic['date']}}</h3>
+        <table style="width: 100%">
+            <tr class="title">
+                <td><h3>Casos totais</h3></td>
+                <td><h3>Mortes por casos</h3></td>
+                <td><h3>Vacinados</h3></td>
+                <td><h3>Vacinados 1ª dose</h3></td>
+                <td><h3>Vacinados 2ª dose</h3></td>
+            </tr>
+            <tr class="data">
+                <td>{{statistic['totalCases']}}</td>
+                <td>{{statistic['deaths_by_totalCases']}}</td>
+                <td>{{statistic['vaccinated']}}</td>
+                <td>{{statistic['vaccinated_single']}}</td>
+                <td>{{statistic['vaccinated_second']}}</td>
+            </tr>
+            <tr></tr>
+        </table>
     </body>
 </html>

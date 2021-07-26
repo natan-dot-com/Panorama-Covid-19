@@ -13,24 +13,23 @@ import java.net.URL;
 
 public class ScriptSetup {
     public static ProcessBuilder builder;
-    public static Process process, process2;
-    public static Process process3;
+    public static Process vaccineProcess, newsProcess, statsProcess;
     public static File app = new File(App.class.getResource("scripts/app.py").getFile());
     public static File news = new File(App.class.getResource("scripts/query_from_db.py").getFile());
     public static File stats = new File(App.class.getResource("scripts/statistics.py").getFile());
     // Obter o caminho absoluto do arquivo.
     public static final String[] scriptNames = {
-        "cmd /c " + app.getAbsolutePath(),
-        "cmd /c " + news.getAbsolutePath(),
-        "cmd /c " + stats.getAbsolutePath()
+        "py " + app.getAbsolutePath(),
+        "py " + news.getAbsolutePath(),
+        "py " + stats.getAbsolutePath()
     };
 
     public static void runAllLocalServices() {
 
         try {
-            process = Runtime.getRuntime().exec(scriptNames[0]);
-            process2 = Runtime.getRuntime().exec(scriptNames[1]);
-            process3 = Runtime.getRuntime().exec(scriptNames[2]);
+            vaccineProcess = Runtime.getRuntime().exec(scriptNames[0]);
+            newsProcess = Runtime.getRuntime().exec(scriptNames[1]);
+            statsProcess = Runtime.getRuntime().exec(scriptNames[2]);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

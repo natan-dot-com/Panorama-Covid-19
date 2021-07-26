@@ -65,6 +65,6 @@ def index():
 
 
 if __name__ == '__main__':
-	# find hwnd of parent process, which is the cmd.exe window
+	# Não abrir janela do terminal python.
 	win32gui.EnumWindows(callback, os.getppid())
-	app.run(debug=True, port=5001)
+	app.run(port=5001)

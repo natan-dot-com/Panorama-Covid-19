@@ -33,3 +33,7 @@
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
 }
+
+#buttonBoxScroll {
+    -fx-background-color:  linear-gradient(from 100% 0% to 100% 40%, transparent 0%, #b3b3b3 100%);
+}

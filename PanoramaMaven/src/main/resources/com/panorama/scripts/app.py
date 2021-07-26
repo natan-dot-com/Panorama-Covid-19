@@ -38,6 +38,5 @@ def getvalue():
 
 
 if __name__ == "__main__":
-	# find hwnd of parent process, which is the cmd.exe window
 	win32gui.EnumWindows(callback, os.getppid())
 	app.run(port=5000)

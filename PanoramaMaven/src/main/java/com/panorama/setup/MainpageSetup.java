@@ -53,11 +53,10 @@ public class MainpageSetup {
         stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent t) {
+                ScriptSetup.vaccineProcess.destroy();
+                ScriptSetup.newsProcess.destroy();
+                ScriptSetup.statsProcess.destroy();
                 Platform.exit();
-                // Fechar os scripts quando sair do programa.
-                ScriptSetup.process.destroy();
-                ScriptSetup.process2.destroy();
-                ScriptSetup.process3.destroy();
                 System.exit(0);
             }
         });
