@@ -1,5 +1,6 @@
 package com.panorama;
 
+import com.panorama.controllers.MainpageController;
 import com.panorama.exceptions.SceneException;
 import com.panorama.setup.MainpageSetup;
 import javafx.application.Application;
@@ -22,6 +23,8 @@ import java.io.IOException;
  */
 
 public class App extends Application {
+
+    public static MainpageController mainpageController;
 
     private static Dimension screenSize;
     // Variáveis são públicas pois são compartiladas no aplicativo.

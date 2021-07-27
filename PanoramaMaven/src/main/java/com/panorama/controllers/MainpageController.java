@@ -51,7 +51,7 @@ public class MainpageController implements Initializable {
      * @throws SceneException Exceção específica para quando o .fxml não é carregado corretamente.
      */
 
-    private void handleButton(ToggleButton button, String fxmlFile) throws SceneException {
+    public void handleButton(ToggleButton button, String fxmlFile) throws SceneException {
         if (lastButton == button) {
             lastButton.setSelected(true);
             return;
@@ -123,7 +123,7 @@ public class MainpageController implements Initializable {
     public void changeToHome(InputEvent event) {
         if (event instanceof MouseEvent) {
             try {
-                handleButton(aboutUsButton, "home");
+                handleButton(homeButton, "home");
             } catch (SceneException e) {
                 System.exit(1);
             }
