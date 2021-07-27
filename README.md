@@ -1,3 +1,4 @@
+![logo](https://github.com/opaulosoares/Panorama-Covid-19/blob/2674eaa70ef7283bf30935ab8c0761808f81d63f/logo.png)
 # Panorama-Covid-19
 
 ## Descrição (PT-BR)
